@@ -6,6 +6,8 @@ var through = require('through2'),
 	parser = new xml2js.Parser(),
 	builder = new xml2js.Builder();
 
+_.trim = require('underscore.string/trim');
+
 var SVGColorizer = {
 	style: '',
 	tags: ['path','rect','circle','ellipse','line','polyline','polygon','g','text'],
@@ -19,7 +21,7 @@ var SVGColorizer = {
 	},
 	inline: function(style) {
 		var thisis = this;
-		this.style = ';' + ((function(object){
+		this.style = ((function(object){
 			var set = [];
 			for (var key in object) {
 				if (object.hasOwnProperty(key)) {
@@ -35,7 +37,7 @@ var SVGColorizer = {
 		
 		style += this.style;
 
-		return style;
+		return _.trim(style, [' ', ';']);
 	},
 	read: function(obj, tag){
 		if (_.isObject(obj) || _.isArray(obj)) {
@@ -64,6 +66,8 @@ module.exports = function(options) {
 		var content = file.contents.toString('utf-8'),
 			parser = new xml2js.Parser(),
 			builder = new xml2js.Builder();
+
+		builder.options.renderOpts.pretty = false;
 
 		parser.parseString(content, function(err,data){
 			SVGColorizer.inline(options.style)
