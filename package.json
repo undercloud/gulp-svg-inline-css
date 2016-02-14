@@ -1,0 +1,36 @@
+{
+	"name": "gulp-svg-inline-css",
+	"license": "MIT",
+	"version": "1.0.1",
+	"description": "",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/undercloud/gulp-svg-inline-css.git"
+	},
+	"keywords": [
+		"gulpplugin",
+		"image",
+		"data-uri",
+		"data",
+		"URI",
+		"CSS",
+		"SVG",
+		"colorize",
+		"style",
+		"base64",
+		"picture",
+		"inline"
+	],
+	"bugs": {
+		"url": "https://github.com/undercloud/gulp-svg-inline-css/issues"
+	},
+	"homepage": "https://github.com/undercloud/gulp-svg-inline-css",
+	"dependencies": {
+		"through2": ">=2.0.1",
+		"xml2js": ">=0.4.16",
+		"cli-color": ">=1.1.0",
+		"underscore": ">=1.8.3",
+		"underscore.string": ">=3.2.3"
+	}
+}
