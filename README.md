@@ -24,7 +24,7 @@ gulp.task('style-svg', function() {
 
 ##Class names
 By default defined this mask ```.icon.%s``` where ```%s``` is file name without extension.
-You can define your own rules for building class name's, just add ```className```key into build options: 
+You can define your own rules for building class name's, just add ```className``` key into build options: 
 ```JavaScript
 ...
 .pipe(svg({
