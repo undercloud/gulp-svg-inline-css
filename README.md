@@ -21,6 +21,7 @@ gulp.task('style-svg', function() {
 ```
 
 ##Styling
+https://www.w3.org/TR/SVG/painting.html
 
 ##Class names
 By default defined this mask ```.icon.%s``` where ```%s``` is file name without extension.
