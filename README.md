@@ -23,15 +23,20 @@ gulp.task('style-svg', function() {
 ##Styling
 Just add ```key: value``` pairs like this
 ```JavaScript
- .pipe(svg({
+...
+.pipe(svg({
 	style: {
 		fill: '#E08283',
 		stroke: '#674172',
 		strokeWidth: 1
 	}
 }))
+...
 ```
 All available style options you can found at https://www.w3.org/TR/SVG/painting.html
+
+*```camelCase``` keys will be transformed into ```dash-splitted``` 
+** inline style will be added for all elements in this list  ```path,rect,circle,ellipse,line,polyline,polygon,g,text```
 
 ##Class names
 By default defined this mask ```.icon.%s``` where ```%s``` is file name without extension.
