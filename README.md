@@ -50,4 +50,24 @@ You can define your own rules for building class name's, just add ```className``
 ))
 ...
 ```
+
 ##Optimize SVG
+For optimizing and compress use ```gulp-svgmin```  https://www.npmjs.com/package/gulp-svgmin
+```JavaScript
+var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	svgmin = require('gulp-svgmin'),
+	svg = require('gulp-svg-inline-css');
+
+gulp.task('style-svg', function() {
+    gulp.src('/path/to/*.svg')
+    	.pipe(svgmin())
+        .pipe(svg({
+        	style: {
+        		fill: '#E08283'
+        	}
+        }))
+        .pipe(concat('sprites.css'))
+        .pipe(gulp.dest('styles/'));
+})
+```
