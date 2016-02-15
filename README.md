@@ -30,9 +30,6 @@ Just add ```key: value``` pairs like this
 		strokeWidth: 1
 	}
 }))
-
-`'path','rect','circle','ellipse','line','polyline','polygon','g','text'`
-
 ```
 All available style options you can found at https://www.w3.org/TR/SVG/painting.html
 
@@ -48,3 +45,4 @@ You can define your own rules for building class name's, just add ```className``
 ))
 ...
 ```
+##Optimize SVG
