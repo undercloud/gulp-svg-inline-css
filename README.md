@@ -35,8 +35,8 @@ Just add ```key: value``` pairs like this
 ```
 All available style options you can found at https://www.w3.org/TR/SVG/painting.html
 
-*```camelCase``` keys will be transformed into ```dash-splitted``` 
-** inline style will be added for all elements in this list  ```path,rect,circle,ellipse,line,polyline,polygon,g,text```
+\*```camelCase``` keys will be transformed into ```dash-splitted``` 
+\** inline style will be added for all elements in this list  ```path,rect,circle,ellipse,line,polyline,polygon,g,text```
 
 ##Class names
 By default defined this mask ```.icon.%s``` where ```%s``` is file name without extension.
