@@ -33,7 +33,7 @@ Just add ```key: value``` pairs like this
 }))
 ...
 ```
-All available style options you can found at https://www.w3.org/TR/SVG/painting.html
+All available style options you can find at https://www.w3.org/TR/SVG/painting.html
 
 \*```camelCase``` keys will be transformed into ```dash-splitted```<br>
 \** inline style will be added for all elements in this list  ```path,rect,circle,ellipse,line,polyline,polygon,g,text```
