@@ -74,7 +74,7 @@ gulp.task('style-svg', function() {
 
 ##Rasterize SVG
 If you add param `raw: true`, plugin just add styles without base64 encoding and css transforms.
-`heigth` and `width` options avail for image scaling.
+Options `heigth` and `width` avail for image scaling.
 Here simple example how you can rasterize svg icons and save as `png` files
 ```JavaScript
 var gulp = require('gulp'),
