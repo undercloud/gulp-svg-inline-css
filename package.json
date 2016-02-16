@@ -2,7 +2,7 @@
 	"name": "gulp-svg-inline-css",
 	"license": "MIT",
 	"version": "1.0.1",
-	"description": "",
+	"description": "Colorize, styling SVG icons and converting into base64-encoded data URI strings",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
