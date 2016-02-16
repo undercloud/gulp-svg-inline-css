@@ -76,6 +76,7 @@ gulp.task('style-svg', function() {
 If you add param `raw: true`, plugin just add styles without base64 encoding and css transforms.
 `heigth` and `width` options avail for image scaling.
 Here simple example how you can rasterize svg icons and save as `png` files
+```JavaScript
 var gulp = require('gulp'),
 	svgmin = require('gulp-svgmin'),
 	raster = require('gulp-raster'),
@@ -99,3 +100,4 @@ gulp.task('inline-svg', function() {
         }))
         .pipe(gulp.dest('processed/'));
 });
+```
