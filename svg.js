@@ -9,23 +9,23 @@ module.exports = {
 	style: '',
 	tags: ['path','rect','circle','ellipse','line','polyline','polygon','g','text'],
 	normalizeKey: function(key) {
-		return _.escape(key.replace(/[A-Z]/g, function(letter){
+		return _.escape(key.replace(/[A-Z]/g, function(letter) {
 			return '-' + letter.toLowerCase();
 		}));
 	},
 	normalizeValue: function(value) {
 		return _.escape(value);
 	},
-	genName: function(file){
+	genName: function(file) {
 		return path.basename(
 			file.path,
 			path.extname(file.path)
 		);
 	},
-	genPath: function(file){
+	genPath: function(file) {
 		return path.dirname(file.path) + path.sep + this.genName(file) + '.css';
 	},
-	buildContent: function(file, options, content){
+	buildContent: function(file, options, content) {
 		content = content.replace('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n','');
 		content = (
 			_.sprintf(options.className, this.genName(file)) + ' {\n' + 

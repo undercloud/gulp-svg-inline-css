@@ -25,7 +25,7 @@ module.exports = function(options) {
 
 		builder.options.renderOpts.pretty = false;
 
-		parser.parseString(content, function(error, data){
+		parser.parseString(content, function(error, data) {
 			if (error !== null) {
 				console.error(
 					clc.red(
