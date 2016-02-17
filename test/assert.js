@@ -17,10 +17,14 @@ describe('svg', function(){
 	});
 
 	describe('#genName', function() {
-
+		it('should return file name without extension', function() {
+			assert.equal('diamonds', svg.genName({path: '/paht/to/svg/diamonds.svg'}))
+		})
 	});
 
 	describe('#genPath', function() {
-
+		it('should return new name for processed file', function() {
+			assert.equal('/path/to/svg/diamonds.css', svg.genPath({path: '/path/to/svg/diamonds.svg'}))
+		})
 	});
 })
