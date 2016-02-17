@@ -2,6 +2,9 @@
 
 Colorize, styling SVG icons and converting into base64-encoded data URI strings
 
+##Install
+```npm install gulp-svg-inline-css```
+
 ##Basic usage
 ```JavaScript
 var gulp = require('gulp'),
