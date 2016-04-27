@@ -8,18 +8,18 @@ Colorize, styling SVG icons and converting into base64-encoded data URI strings
 ##Basic usage
 ```js
 var gulp = require('gulp'),
-  concat = require('gulp-concat'),
-  svg = require('gulp-svg-inline-css');
+	concat = require('gulp-concat'),
+	svg = require('gulp-svg-inline-css');
 
 gulp.task('style-svg', function() {
-  gulp.src('/path/to/*.svg')
-    .pipe(svg({
-      style: {
-        fill: '#E08283'
-      }
-    }))
-    .pipe(concat('sprites.css'))
-    .pipe(gulp.dest('styles/'));
+	gulp.src('/path/to/*.svg')
+		.pipe(svg({
+			style: {
+				fill: '#E08283'
+			}
+		}))
+		.pipe(concat('sprites.css'))
+		.pipe(gulp.dest('styles/'));
 })
 ```
 
@@ -28,11 +28,11 @@ Just add ```key: value``` pairs like this
 ```js
 ...
 .pipe(svg({
-  style: {
-    fill: '#E08283',
-    stroke: '#674172',
-    strokeWidth: 1
-  }
+	style: {
+		fill: '#E08283',
+		stroke: '#674172',
+		strokeWidth: 1
+	}
 }))
 ...
 ```
@@ -47,31 +47,40 @@ You can define your own rules for building class name's, just add ```className``
 ```js
 ...
 .pipe(svg({
-  //bem like style
-  className: '.icon.icon--%s:hover',
-  style: {...}
+	//bem like style
+	className: '.icon.icon--%s:hover',
+	style: {...}
 ))
 ...
+```
+or use callback
+```js
+.pipe(svg(
+	className: function(fileName) {
+		return fileName.replace(/[^A-Za-z0-9_-]/g, '-').toLowerCase();
+	},
+	style: {...}
+))
 ```
 
 ##Optimize SVG
 For optimizing and compress use ```gulp-svgmin```  https://www.npmjs.com/package/gulp-svgmin
 ```js
 var gulp = require('gulp'),
-  concat = require('gulp-concat'),
-  svgmin = require('gulp-svgmin'),
-  svg = require('gulp-svg-inline-css');
+	concat = require('gulp-concat'),
+	svgmin = require('gulp-svgmin'),
+	svg = require('gulp-svg-inline-css');
 
 gulp.task('style-svg', function() {
-  gulp.src('/path/to/*.svg')
-    .pipe(svgmin())
-    .pipe(svg({
-      style: {
-        fill: '#E08283'
-      }
-    }))
-    .pipe(concat('sprites.css'))
-    .pipe(gulp.dest('styles/'));
+	gulp.src('/path/to/*.svg')
+		.pipe(svgmin())
+		.pipe(svg({
+			style: {
+				fill: '#E08283'
+			}
+		}))
+		.pipe(concat('sprites.css'))
+		.pipe(gulp.dest('styles/'));
 })
 ```
 
@@ -81,26 +90,26 @@ Options `heigth` and `width` avail for image scaling.
 Here simple example how you can rasterize svg icons and save as `png` files
 ```js
 var gulp = require('gulp'),
-  svgmin = require('gulp-svgmin'),
-  raster = require('gulp-raster'),
-  rename = require('gulp-rename'),
-  svg = require('gulp-svg-inline-css');
+	svgmin = require('gulp-svgmin'),
+	raster = require('gulp-raster'),
+	rename = require('gulp-rename'),
+	svg = require('gulp-svg-inline-css');
 
 gulp.task('inline-svg', function() {
-  gulp.src('*.svg')
-    .pipe(svgmin())
-    .pipe(svg({
-      raw: true,
-      width: 48,
-      height: 48,
-      style: {
-        fill: '#E08283'
-      }
-    }))
-    .pipe(raster())
-    .pipe(rename({
-      extname: '.png'
-    }))
-    .pipe(gulp.dest('processed/'));
+	gulp.src('*.svg')
+		.pipe(svgmin())
+		.pipe(svg({
+			raw: true,
+			width: 48,
+			height: 48,
+			style: {
+				fill: '#E08283'
+			}
+		}))
+		.pipe(raster())
+		.pipe(rename({
+			extname: '.png'
+		}))
+		.pipe(gulp.dest('processed/'));
 });
 ```

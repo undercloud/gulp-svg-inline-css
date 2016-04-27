@@ -28,7 +28,11 @@ module.exports = {
 	buildContent: function(file, options, content) {
 		content = content.replace('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n','');
 		content = (
-			_.sprintf(options.className, this.genName(file)) + ' {\n' + 
+			(
+				(typeof options.className === 'function')
+				? options.className(this.genName(file))
+				: _.sprintf(options.className, this.genName(file))
+			) + ' {\n' + 
 			'  background-image: url(\'data:image/svg+xml;base64,' + new Buffer(content).toString('base64') + '\');\n' +
 			'}\n'
 		);
