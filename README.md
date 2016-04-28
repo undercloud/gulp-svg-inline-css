@@ -55,12 +55,12 @@ You can define your own rules for building class name's, just add ```className``
 ```
 or use callback
 ```js
-.pipe(svg(
+.pipe(svg({
 	className: function(fileName) {
 		return fileName.replace(/[^A-Za-z0-9_-]/g, '-').toLowerCase();
 	},
 	style: {...}
-))
+}))
 ```
 
 ##Optimize SVG
