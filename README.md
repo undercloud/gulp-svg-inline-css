@@ -50,7 +50,7 @@ You can define your own rules for building class name's, just add ```className``
 	//bem like style
 	className: '.icon.icon--%s:hover',
 	style: {...}
-))
+}))
 ...
 ```
 or use callback
