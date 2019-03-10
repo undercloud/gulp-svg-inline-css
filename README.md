@@ -2,10 +2,10 @@
 
 Colorize, styling SVG icons and converting into base64-encoded data URI strings
 
-##Install
+## Install
 ```npm install gulp-svg-inline-css```
 
-##Basic usage
+## Basic usage
 ```js
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
@@ -23,7 +23,7 @@ gulp.task('style-svg', function() {
 })
 ```
 
-##Styling
+## Styling
 Just add ```key: value``` pairs like this
 ```js
 ...
@@ -41,7 +41,7 @@ All available style options you can find at https://www.w3.org/TR/SVG/painting.h
 \*```camelCase``` keys will be transformed into ```dash-splitted```<br>
 \** inline style will be added for all elements in this list  ```path,rect,circle,ellipse,line,polyline,polygon,g,text```
 
-##Class names
+## Class names
 By default defined this mask ```.icon.%s``` where ```%s``` is file name without extension.
 You can define your own rules for building class name's, just add ```className``` key into build options: 
 ```js
@@ -63,7 +63,7 @@ or use callback
 }))
 ```
 
-##Optimize SVG
+## Optimize SVG
 For optimizing and compress use ```gulp-svgmin```  https://www.npmjs.com/package/gulp-svgmin
 ```js
 var gulp = require('gulp'),
@@ -84,7 +84,7 @@ gulp.task('style-svg', function() {
 })
 ```
 
-##Rasterize SVG
+## Rasterize SVG
 If you add param `raw: true`, plugin just add styles without base64 encoding and css transforms.
 Options `heigth` and `width` avail for image scaling.
 Here simple example how you can rasterize svg icons and save as `png` files
