@@ -32,6 +32,7 @@ if(typeof Object.isset != 'function'){
 module.exports = function(options) {
 	options = options || {};
 	options.style = options.style || {};
+	options.encoding = options.encoding || 'base64';
 	options.className = options.className || '.icon.%s';
 	options.raw = options.raw || false;
 
