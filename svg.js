@@ -33,7 +33,7 @@ module.exports = {
 				? options.className(this.genName(file))
 				: _.sprintf(options.className, this.genName(file))
 			) + ' {\n' + 
-			'  background-image: url(\'data:image/svg+xml;base64,' + new Buffer(content).toString('base64') + '\');\n' +
+			'  background-image: url(\'data:image/svg+xml;' + options.encoding + ',' + new Buffer(content).toString(options.encoding) + '\');\n' +
 			'}\n'
 		);
 
